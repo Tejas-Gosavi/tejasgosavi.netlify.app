@@ -1,12 +1,11 @@
-:root {
-    --color-primary: #0dcaf0;
-    --color-secondary: #0dac; 
-    --color-light: #f8f9fa;
-    --color-dark: #212529;
+::root {
+    --light-theme: white;
+	--dark-theme: #2d3748;
 }
-
-html, body {
-    height: 100%;
-    margin: 0;
-    background-color: var(--color-dark);
+::selection {
+    background-color: #2d3748;
+    color: white;
+}
+img::selection {
+    background-color: white;
 }

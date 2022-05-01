@@ -1,26 +1,23 @@
 <template>
-	<Navbar />
-	<Home id="home" class="section container" />
-	<Me id="me" class="section" />
-	<Projects id="projects" class="section" />
-	<Contact id="contact" class="section" />
+	<div class="container">
+		<Navbar />
+		<hr>
+		<router-view></router-view>
+	</div>
 </template>
 
 <script>
 import Navbar from "./components/Navbar.vue";
-import Home from "./components/Home.vue";
-import Me from "./components/Me.vue";
-import Projects from "./components/Projects.vue";
-import Contact from "./components/Contact.vue";
+import { store } from './store';
 
 export default {
+	setup() {
+        const myStore = store();
+        return { myStore }
+    },
 	name: "App",
 	components: {
 		Navbar,
-		Home,
-		Me,
-		Projects,
-		Contact,
 	},
 };
 </script>
@@ -30,27 +27,18 @@ export default {
 @import "./assets/css/styles.css";
 
 #app {
-	font-family: Avenir, Helvetica, Arial, sans-serif;
+	font-family: 'Roboto Mono', monospace;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
+	text-align: left;
+	color: #2d3748;
 }
-
-.section {
-	padding-top: 100px;
-	height: 100vh;
+#hero-text {
+	font-size: 25px;
+	font-weight: 100;
 }
-
-#me,
-#projects,
-#contact {
-	margin: auto;
-	width: 60vw;
-	background: transparent;
+a, a:hover {
+	text-decoration: none;
+	color: #2d3748;
 }
-
-#projects {
-	height: max-content;
-}
-
 </style>
