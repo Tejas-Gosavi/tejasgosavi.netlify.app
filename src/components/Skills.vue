@@ -1,7 +1,7 @@
 <template>
 	<section class="container mt-3">
 		<div class="mt-5" id="hero-text">
-			Tejas mostly work in
+			Tejas mostly works in
 			<div class="d-flex flex-wrap justify-content-start align-items-center">
 				<img src="../assets/logo/c++.svg" alt="C++" class="skills-img" />,
 				<img src="../assets/logo/python.svg" alt="Python" class="skills-img" />,
@@ -18,8 +18,8 @@
 				<img src="../assets/logo/mongodb.svg" alt="MongoDB" class="skills-img" />, 
 				<img src="../assets/logo/bootstrap.svg" alt="Bootstrap" class="skills-img" />.
 			</div><br>
-			He also has interest in machine learning, he had participated in machine learning hackathons on various platforms,
-			there he did performed well and also achieved some decent rank.
+			He also has interest in machine learning; he had participated in machine learning hackathons on various platforms,
+			there, he did perform well and also achieved some decent rank.
 		</div>
 	</section>
 </template>
@@ -40,7 +40,7 @@ export default {
 
 @media screen and (min-width: 425px) and (max-width: 992px){
 	#hero-text {
-		font-size: 1.3rem;
+		font-size: 1.5rem;
 	}
 }
 

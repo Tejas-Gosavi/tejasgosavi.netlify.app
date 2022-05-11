@@ -34,11 +34,17 @@ export default {
 	color: #2d3748;
 }
 #hero-text {
-	font-size: 25px;
+	font-size: 1.5rem;
 	font-weight: 100;
 }
 a, a:hover {
 	text-decoration: none;
 	color: #2d3748;
+}
+.link-underline {
+	text-decoration: underline;
+}
+.link-underline:hover {
+	text-decoration: none;
 }
 </style>

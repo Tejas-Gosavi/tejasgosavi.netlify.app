@@ -19,11 +19,9 @@
 					<img src="../assets/logo/stackoverflow.svg" alt="Stackoverflow" class="contact-img"/>
 				</a>.
 			</div><br>
-			<p>
-				<a id="resume-link" target="_blank" href="https://drive.google.com/file/d/1i-hhxBzYsrNvFFi7CoYrAGTRA-MVizZZ/view?usp=sharing">
-				See Tejas's Resume/CV</a
-				>.
-			</p> 
+			<a class="link-underline" target="_blank" href="https://drive.google.com/file/d/1i-hhxBzYsrNvFFi7CoYrAGTRA-MVizZZ/view?usp=sharing">
+				Tejas's Resume/CV</a
+			>.
 		</div>
 	</section>
 </template>
@@ -41,13 +39,9 @@ export default {
 	padding: 8px;
 }
 
-#resume-link:hover {
-	text-decoration: underline;
-}
-
 @media screen and (min-width: 425px) and (max-width: 992px){
 	#hero-text {
-		font-size: 1.3rem;
+		font-size: 1.5rem;
 	}
 }
 

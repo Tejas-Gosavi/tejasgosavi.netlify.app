@@ -15,7 +15,7 @@
 				</span>
 			</button>
 		</div>
-		<div class="d-flex justify-content-start mt-4 gap-4 nav-links pb-0">
+		<div class="d-flex justify-content-start mt-4 gap-sm-4 gap-3 pb-0 nav-links" :class="[isLight ? '' : '']">
 			<router-link to="/skills">Skills</router-link>
 			<router-link to="/projects">Projects</router-link>
 			<router-link to="/about">About</router-link>
@@ -54,25 +54,25 @@ export default {
 	background-color: white;
 }
 .nav-links > a {
-	font-size: 1.1rem;
-	opacity: 0.6;
+	opacity: 0.7;
 }
 .nav-links > a:hover  {
 	opacity: 1;
 	text-decoration: underline;
 }
-.nav-links > .router-link-active{
+.nav-links > .router-link-active {
 	opacity: 1;
 }
+
 @media screen and (min-width: 425px) and (max-width: 992px){
 	.nav-links > a {
-		font-size: 1.2rem;
+		font-size: 1.1rem;
 	}
 }
 
 @media screen and (min-width: 320px) and (max-width: 425px){
 	.nav-links > a {
-		font-size: 1.1rem;
+		font-size: 1rem;
 	}
 }
 </style>
