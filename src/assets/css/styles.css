@@ -1,11 +1,63 @@
-::root {
-    --light-theme: white;
-	--dark-theme: #2d3748;
+:root {
+    --ff: 'Roboto Mono', monospace;
+    
+    --primary-color: rgb(27, 30, 46);
+    --primary-color-600: rgba(27, 30, 46, 0.60);
+    --primary-color-800: rgba(27, 30, 46, 0.80);
+
+    --secondary-color: white;
+    --secondary-color-600: rgba(255, 255, 255, 0.60);
+    --secondary-color-800: rgba(255, 255, 255, 0.80);
+
+    --fs-smaller: 0.9rem;
+    --fs-small: 1rem;
+    --fs-medium: 1.2rem;
+    --fs-large: 1.4rem;
 }
-::selection {
-    background-color: #2d3748;
-    color: white;
+body * {
+    background: transparent;
 }
-img::selection {
-    background-color: white;
+body {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    font-family: var(--ff);
+    text-align: left;;
+}
+img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    cursor: pointer;
+}
+a, a:hover {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+.hero-text {
+    font-size: var(--fs-large);
+}
+.svg-img {
+	height: 50px;
+	width: 50px;
+	padding: 8px;
+    cursor: pointer;
+}
+.special-link {
+    border-bottom: 2px solid var(--primary-color);
+}
+hr {
+    background-color: var(--primary-color);
+}
+
+@media screen and (min-width: 425px) and (max-width: 992px){
+	.hero-text {
+		font-size: var(--fs-medium);
+	}
+}
+
+@media screen and (min-width: 250px) and (max-width: 425px){
+	.hero-text {
+		font-size: var(--fs-small);
+	}
 }

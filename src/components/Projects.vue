@@ -1,10 +1,9 @@
 <template>
 	<section class="container mt-3">
 		<div class="mt-5">
-			<div v-for="project in projects" :key="project.id">
+			<article v-for="project in projects" :key="project.id">
 				<Project :project="project" />
-				<hr>
-			</div>
+			</article>
 		</div>
 	</section>
 </template>
@@ -44,5 +43,5 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 </style>

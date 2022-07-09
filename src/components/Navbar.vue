@@ -1,8 +1,8 @@
 <template>
 	<nav class="container mt-5">
 		<div class="d-flex justify-content-between">
-			<router-link to="/"><h1 class="m-0" id="title-link">T&epsilon;j&alpha;s Gos&alpha;&nu;&#943;.</h1></router-link>
-			<button @click="toggleTheme()" id="btn-theme">
+			<router-link to="/"><h1 class="m-0">T&epsilon;j&alpha;s Gos&alpha;&nu;&#943;.</h1></router-link>
+			<button @click="toggleTheme()" class="change-theme-btn">
 				<span v-show="isLight">
 					<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-sun" viewBox="0 0 16 16">
 						<path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
@@ -15,64 +15,72 @@
 				</span>
 			</button>
 		</div>
-		<div class="d-flex justify-content-start mt-4 gap-sm-4 gap-3 pb-0 nav-links" :class="[isLight ? '' : '']">
+		<div class="d-flex justify-content-start mt-4 gap-sm-4 gap-3 pb-0 nav-links">
 			<router-link to="/skills">Skills</router-link>
 			<router-link to="/projects">Projects</router-link>
 			<router-link to="/about">About</router-link>
 			<router-link to="/connect">Connect</router-link>
 		</div>
 	</nav>
+	<hr>
 </template>
 
 <script>
-import { store } from '../store';
-
 export default {
 	name: "Navbar",
-	setup() {
-        const myStore = store();
-        return { myStore }
-    },
 	data() {
 		return {
-			isLight: this.myStore.isThemeLight,
+			isLight: true,
 		}
 	},
 	methods: {
 		toggleTheme() {
-			this.myStore.toogleTheme();
-			this.$data.isLight = this.myStore.isThemeLight;
+			this.$data.isLight = !this.$data.isLight;
+			if(this.$data.isLight) {
+				document.documentElement.style.setProperty("--primary-color", "#1b1e2e");
+				document.documentElement.style.setProperty("--primary-color-600", "#1b1e2e99");
+				document.documentElement.style.setProperty("--primary-color-800", "#1b1e2ecc");
+
+				document.documentElement.style.setProperty("--secondary-color", "#ffffff");
+				document.documentElement.style.setProperty("--secondary-color-600", "#ffffff99");
+				document.documentElement.style.setProperty("--secondary-color-800", "#ffffffcc");
+			} else {
+				document.documentElement.style.setProperty("--primary-color", "#ffffff");
+				document.documentElement.style.setProperty("--primary-color-600", "#ffffff99");
+				document.documentElement.style.setProperty("--primary-color-800", "#ffffffcc");
+
+				document.documentElement.style.setProperty("--secondary-color", "#1b1e2e");
+				document.documentElement.style.setProperty("--secondary-color-600", "#1b1e2e99");
+				document.documentElement.style.setProperty("--secondary-color-800", "#1b1e2ecc");
+			}
 		}
-	},
+	}
 };
 </script>
 
-<style scoped>
-#btn-theme {
-	border: none;
-	padding: 0;
-	background-color: white;
-}
+<style>
 .nav-links > a {
-	opacity: 0.7;
+	font-size: var(--fs-medium);
+	color: var(--primary-color-600);
 }
-.nav-links > a:hover  {
-	opacity: 1;
-	text-decoration: underline;
+.nav-links > a:hover, .nav-links > .router-link-active  {
+	color: var(--primary-color);
 }
-.nav-links > .router-link-active {
-	opacity: 1;
+.change-theme-btn {
+	font-size: var(--fs-medium);
+	color: var(--primary-color);
+	border: none;
 }
 
 @media screen and (min-width: 425px) and (max-width: 992px){
 	.nav-links > a {
-		font-size: 1.1rem;
+		font-size: var(--fs-small);
 	}
 }
 
 @media screen and (min-width: 320px) and (max-width: 425px){
 	.nav-links > a {
-		font-size: 1rem;
+		font-size: var(--fs-smaller);
 	}
 }
 </style>

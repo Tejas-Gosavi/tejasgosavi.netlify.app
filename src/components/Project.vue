@@ -1,11 +1,9 @@
 <template>
-	<section>
-		<p class="mb-0">
-			<a :href="project.link" id="project-title" class="link-underline">{{ project.title }}</a>
-		</p>
-		<p id="project-tools">{{ project.tools }}</p>
-		<p id="project-desc" class="mb-2">{{ project.desc }}</p>
-	</section>
+	<p class="mb-1">
+		<a :href="project.link" class="project-title special-link">{{ project.title }}</a>
+	</p>
+	<p class="project-tools mb-1">{{ project.tools }}</p>
+	<p class="project-desc mb-5">{{ project.desc }}</p>
 </template>
 
 <script>
@@ -16,41 +14,39 @@ export default {
 </script>
 
 <style scoped>
-#project-title {
-	font-size: 1.5rem;
-	font-weight: 100;
+.project-title {
+	font-size: var(--fs-large);
 }
-
-#project-tools {
-	font-size: 0.9rem;
-	color: #797979;
+.project-tools {
+	font-size: var(--fs-smaller);
+	color: var(--primary-color-600);
 }
-#project-desc {
-	font-size: 1.1rem;
-	color: #4e4e4e;
+.project-desc {
+	font-size: var(--fs-medium);
+	color: var(--primary-color-800);
 }
 
 @media screen and (min-width: 425px) and (max-width: 992px){
-	#project-title {
-		font-size: 1.5rem;
+	.project-title {
+		font-size: var(--fs-medium);
 	}
-	#project-tools {
-		font-size: 1.1rem;
+	.project-tools {
+		font-size: var(--fs-small);
 	}
-	#project-desc {
-		font-size: 1.3rem;
+	.project-desc {
+		font-size: var(--fs-small);
 	}
 }
 
-@media screen and (min-width: 320px) and (max-width: 425px){
-	#project-title {
-		font-size: 1.3rem;
+@media screen and (min-width: 250px) and (max-width: 425px){
+	.project-title {
+		font-size: var(--fs-medium);
 	}
-	#project-tools {
-		font-size: 0.9rem;
+	.project-tools {
+		font-size: var(--fs-smaller);
 	}
-	#project-desc {
-		font-size: 1.1rem;
+	.project-desc {
+		font-size: var(--fs-small);
 	}
 }
 </style>
