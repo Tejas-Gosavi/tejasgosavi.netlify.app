@@ -8,7 +8,7 @@
 					as an Associate Software Developement Engineer.</p>
 			</div>
 			<div class="img-wrapper">
-				<img :src="`src/assets/images/hero${img}.jpg`" height="300" alt="" @click="changeImg()">
+				<img :src="`../assets/images/hero${img}.jpg`" height="300" alt="" @click="changeImg()">
 			</div>
 		</div>
 	</section>
