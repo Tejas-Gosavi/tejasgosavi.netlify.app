@@ -1,15 +1,13 @@
 <template>
-	<section class="container mt-3 home">
-		<div class="mt-5 hero-text gap-4">
-			<div>
-				<p>Hello, My name is Tejas Gosavi.</p>
-				<p>I'm currently at
-					<a href="http://prismforce.com/" target="_blank" class="special-link">Prismforce</a>
-					as an Associate Software Developement Engineer.</p>
-			</div>
-			<div class="img-wrapper">
-				<img :src="`../assets/images/hero${img}.jpg`" height="300" alt="" @click="changeImg()">
-			</div>
+	<section class="container mt-5 home hero-text gap-4">
+		<div>
+			<p>Hello, My name is Tejas Gosavi.</p>
+			<p>I'm currently at
+				<a href="http://prismforce.com/" target="_blank" class="special-link">Prismforce</a>
+				as an Associate Software Developement Engineer.</p>
+		</div>
+		<div class="img-wrapper">
+			<img :src="`src/assets/images/hero${img}.jpg`" height="300" alt="" @click="changeImg()">
 		</div>
 	</section>
 </template>
@@ -31,7 +29,7 @@ export default {
 </script>
 
 <style scoped>
-.home > div {
+.home {
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: center;

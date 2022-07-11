@@ -15,7 +15,7 @@
 				</span>
 			</button>
 		</div>
-		<div class="d-flex justify-content-start mt-4 gap-sm-4 gap-3 pb-0 nav-links">
+		<div class="d-flex justify-content-start mt-4 gap-4 pb-0 nav-links">
 			<router-link to="/skills">Skills</router-link>
 			<router-link to="/projects">Projects</router-link>
 			<router-link to="/about">About</router-link>

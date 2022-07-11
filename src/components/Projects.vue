@@ -1,10 +1,8 @@
 <template>
-	<section class="container mt-3">
-		<div class="mt-5">
-			<article v-for="project in projects" :key="project.id">
+	<section class="container mt-5">
+		<article v-for="project in projects" :key="project.id">
 				<Project :project="project" />
-			</article>
-		</div>
+		</article>
 	</section>
 </template>
 

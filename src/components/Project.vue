@@ -2,8 +2,9 @@
 	<p class="mb-1">
 		<a :href="project.link" class="project-title special-link">{{ project.title }}</a>
 	</p>
-	<p class="project-tools mb-1">{{ project.tools }}</p>
-	<p class="project-desc mb-5">{{ project.desc }}</p>
+	<p class="project-tools">{{ project.tools }}</p>
+	<p class="project-desc">{{ project.desc }}</p>
+	<hr>
 </template>
 
 <script>
